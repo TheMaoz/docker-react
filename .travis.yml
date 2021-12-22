@@ -8,3 +8,19 @@ before_install:
 
 script:
   - docker run -t maozcyber12/docker-react npm run test -- --coverage
+
+# Deploy to AWS elasticbeanstalk
+deploy:
+  provider: elasticbeanstalk
+  region: "AWS-REGION"
+  app: "APP-NAME"
+  env: "ENV-NAME"
+  bucket_name: "ELASTIC-BUCKET-NAME"
+  # bucket_path: PATH.
+  on:
+    branch: master
+
+
+
+
+
